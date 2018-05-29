@@ -43,8 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="StrategyOrder\ForwardOrder.cs" />
+    <Compile Include="StrategyOrder\Order.cs" />
+    <Compile Include="StrategyOrder\OrderCreator.cs" />
+    <Compile Include="StrategyOrder\OrderPayer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StrategyOrder\SpotOrder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
