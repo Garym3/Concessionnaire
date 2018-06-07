@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="StrategyOrder\ForwardOrder.cs" />
+    <Compile Include="StrategyOrder\IOrder.cs" />
     <Compile Include="StrategyOrder\Order.cs" />
     <Compile Include="StrategyOrder\OrderCreator.cs" />
     <Compile Include="StrategyOrder\OrderPayer.cs" />

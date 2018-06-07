@@ -16,11 +16,14 @@ namespace Concessionnaire.StrategyOrder
         {
             foreach (Order order in _orders)
             {
-                if (!order.IsValid()) continue;
-
-                order.Pay();
-                Console.WriteLine($"Order n°{order.Id} has been payed.");
+                if (!order.Pay()) continue;
+                Console.WriteLine($"Order n°{order.Id} has been paid.");
             }
+        }
+
+        public void Pay(Order order)
+        {
+            order.Pay();
         }
     }
 }

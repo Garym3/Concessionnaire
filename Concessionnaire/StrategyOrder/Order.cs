@@ -4,11 +4,10 @@ namespace Concessionnaire.StrategyOrder
     public abstract class Order
     {
         protected double Amount = 0.0;
-        protected bool HasBeenPayed = false;
+        protected bool HasBeenPaid = false;
         public int Id;
-    
-        public abstract void Pay();
 
+        public abstract bool Pay();
         public abstract bool IsValid();
     }
 }

@@ -13,7 +13,7 @@ namespace Concessionnaire
             var orderCreator = new OrderCreator(orders);
             var orderPayer = new OrderPayer(orders);
 
-            var paymentDate = new DateTime(2018, 06, 10, 23, 59, 00);
+            var paymentDate = new DateTime(2018, 06, 10, 23, 59, 00); // 10/06/2018
 
             Console.WriteLine("--------------------------------------");
 

@@ -18,27 +18,28 @@ namespace Concessionnaire.StrategyOrder
             if (Amount < 0.0)
             {
                 Console.WriteLine($@"/!\ Order n°{Id} has an incorrect amount.");
-                if (HasBeenPayed)
-                {
-                    Console.WriteLine($@"/!\ Order n°{Id} has already been payed.");
-                    if (DateTime.Now >= _paymentDate)
-                    {
-                        Console.WriteLine($@"/!\ Order n°{Id} has already past by its payment date.");
-                        return false;
-                    }
-                    return false;
-                }
+                return false;
+            }
+            if (HasBeenPaid)
+            {
+                Console.WriteLine($@"/!\ Order n°{Id} has already been paid.");
+                return false;
+            }
+            if (DateTime.Now >= _paymentDate)
+            {
+                Console.WriteLine($@"/!\ Order n°{Id} has already past by its payment date.");
                 return false;
             }
 
             return true;
         }
 
-        public override void Pay()
+        public override bool Pay()
         {
-            if (!IsValid()) return;
+            if (!IsValid()) return false;
 
-            HasBeenPayed = true;
+            HasBeenPaid = true;
+            return true;
         }
     }
 }
