@@ -11,7 +11,7 @@ namespace ConcessionnaireTest
         private List<Order> _orders;
         private OrderCreator _orderCreator;
         private OrderPayer _orderPayer;
-        private readonly DateTime _paymentDate = new DateTime(2018, 06, 10, 23, 59, 00); 
+        private readonly DateTime _paymentDate = DateTime.Now.AddYears(1); 
 
         private void SetTestEnvironnement()
         {
@@ -21,7 +21,7 @@ namespace ConcessionnaireTest
         }
 
         [TestMethod]
-        public void Should_Only_Contain_2_Orders()
+        public void Should_Only_Contains_2_Orders()
         {
             SetTestEnvironnement();
 
@@ -66,7 +66,7 @@ namespace ConcessionnaireTest
         {
             SetTestEnvironnement();
 
-            var forwardOrder = new ForwardOrder(0, 10, _paymentDate.AddMonths(-1));
+            var forwardOrder = new ForwardOrder(0, 10, _paymentDate.AddYears(-1));
             _orderCreator.CreateNewOrder(forwardOrder);
 
             Assert.IsFalse(forwardOrder.IsValid());
